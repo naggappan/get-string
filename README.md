@@ -22,4 +22,8 @@
   or
 
   curl http://$IP/v1/api/reverse
+  
+  Output:
+  {"id":"1","message":"dlroW olleH"}
+
 
