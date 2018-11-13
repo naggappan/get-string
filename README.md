@@ -1,9 +1,9 @@
 # Example code to run a flask application with gunicorn and docker
 
- This code contains 2 example application written using flask
- One application connectes with other application and return the reverse string
- Nginx will be running in port 80 and pointing to 2nd app reverse_app
- Now reverse_app will communicate with main_app and then reverse the string and send it back to requestor
+ * This code contains 2 example application written using flask
+ * One application connectes with other application and return the reverse string
+ * Nginx will be running in port 80 and pointing to 2nd app reverse_app
+ * Now reverse_app will communicate with main_app and then reverse the string and send it back to requestor
 
 # Requirements to be installed
   
