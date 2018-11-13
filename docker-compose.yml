@@ -1,0 +1,31 @@
+version: '3'
+
+services:
+
+  main_app:
+    container_name: main_app
+    restart: always
+    build: ./main_app
+    ports:
+      - "8000:8000"
+    command: gunicorn -c gunicorn.ini main_app.application:app
+  
+  reverse_app:
+    container_name: reverse_app
+    restart: always
+    build: ./reverse_app
+    ports:
+      - "8001:8001"
+    depends_on:
+      - main_app
+    command: gunicorn -c gunicorn.ini reverse_app.application:app
+
+  nginx:
+    container_name: nginx
+    restart: always
+    build: ./nginx
+    ports:
+      - "80:80"
+    depends_on:
+      - reverse_app
+
