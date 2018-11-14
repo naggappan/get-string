@@ -2,23 +2,23 @@ version: '3'
 
 services:
 
-  main_app:
-    container_name: main_app
+  mainapp:
+    container_name: mainapp
     restart: always
-    build: ./main_app
+    build: ./mainapp
     ports:
       - "8000:8000"
-    command: gunicorn -c gunicorn.ini main_app.application:app
+    command: gunicorn -c gunicorn.ini mainapp.application:app
   
-  reverse_app:
-    container_name: reverse_app
+  reverseapp:
+    container_name: reverseapp
     restart: always
-    build: ./reverse_app
+    build: ./reverseapp
     ports:
       - "8001:8001"
     depends_on:
-      - main_app
-    command: gunicorn -c gunicorn.ini reverse_app.application:app
+      - mainapp
+    command: gunicorn -c gunicorn.ini reverseapp.application:app
 
   nginx:
     container_name: nginx
@@ -27,5 +27,5 @@ services:
     ports:
       - "80:80"
     depends_on:
-      - reverse_app
+      - reverseapp
 

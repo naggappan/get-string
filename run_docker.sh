@@ -4,5 +4,6 @@ echo killing old docker processes
 docker-compose rm -fs
 
 echo building docker containers
-docker-compose up --build -d main_app reverse_app nginx
+docker-compose up --build -d mainapp reverseapp nginx
+#docker-compose up --build -d nginx
 
