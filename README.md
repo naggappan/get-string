@@ -13,7 +13,7 @@
 
 # Run all 3 containers using the following command
 
-  sudo ./run_docker.sh
+  sudo ./run_docker.sh   (This will use docker compose file and run all togather)
 
 # Test the request
   
@@ -27,3 +27,7 @@
   {"id":"1","message":"dlroW olleH"}
 
 
+
+# Steps to Host it in Kubernities / Minikube
+
+  kubectl create -f .

@@ -6,6 +6,7 @@ services:
     container_name: mainapp
     restart: always
     build: ./mainapp
+    image: mainapp
     ports:
       - "8000:8000"
     command: gunicorn -c gunicorn.ini mainapp.application:app
@@ -14,6 +15,7 @@ services:
     container_name: reverseapp
     restart: always
     build: ./reverseapp
+    image: reverseapp
     ports:
       - "8001:8001"
     depends_on:
@@ -24,6 +26,7 @@ services:
     container_name: nginx
     restart: always
     build: ./nginx
+    image: nginx1
     ports:
       - "80:80"
     depends_on:
