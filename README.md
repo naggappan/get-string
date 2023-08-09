@@ -31,3 +31,5 @@
 # Steps to Host it in Kubernities / Minikube
 
   kubectl create -f .
+
+# add a patch to first tag v1.0
