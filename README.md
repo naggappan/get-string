@@ -31,3 +31,5 @@
 # Steps to Host it in Kubernities / Minikube
 
   kubectl create -f .
+
+# added new tag
